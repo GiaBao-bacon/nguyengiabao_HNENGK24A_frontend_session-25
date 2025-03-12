@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      const insertArr = (numbersIndex) => {
+        let nums = [];
+        for (let i = 0; i < numbersIndex; i++) {
+          let a = +prompt(`Mời nhập số thứ${i + 1}`);
+          if (isNaN(a)) {
+            return "Giá trị không hợp lệ";
+          }
+          nums.push(a);
+        }
+        return nums;
+      };
+
+      const posNum = (numbers) => {
+        let even = [];
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] > 0) {
+            even.push(numbers[i]);
+          }
+        }
+        return even;
+      };
+      let n = +prompt("Bạn muốn mảng có bao nhiêu phần tử:");
+      if (isNaN(n)) {
+        alert("Sai cú pháp");
+      } else {
+        numbers = insertArr(n);
+        let pos = posNum(numbers);
+        if (pos.length == 0) {
+          alert("Mảng không có số dương");
+        } else {
+          alert(pos);
+        }
+      }
+    </script>
+  </body>
+</html>
