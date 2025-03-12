@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = [];
+      const insertArray = (numberIndex) => {
+        let nums = [];
+        for (let i = 0; i < numberIndex; i++) {
+          let a = +prompt(`Mời nhập số thứ ${i + 1}`);
+          if (isNaN(a)) {
+            return "Giá trị nhập vào không hợp lệ";
+          }
+          nums.push(a);
+        }
+        return nums;
+      };
+
+      const findMin = (number) => {
+        let temp = number[0];
+        for (let i = 1; i < number.length; i++) {
+          if (temp > number[i]) {
+            temp = number[i];
+          }
+        }
+        return temp;
+      };
+
+      let n = +prompt("Bạn muốn mảng có bao nhiêu phần tử");
+      if (isNaN(n) || n <= 0) {
+        alert("Số lượng phần tử không hợp lệ");
+      } else {
+        number = insertArray(n);
+        let min = findMin(number);
+        alert(`Phần tử nhỏ nhất ở trong mảng = ${min}`);
+      }
+    </script>
+  </body>
+</html>
